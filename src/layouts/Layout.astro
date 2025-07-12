@@ -1,7 +1,8 @@
 ---
 const { pageTitle } = Astro.props
 import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap-icons/font/bootstrap-icons.css';
+import 'bootstrap-icons/font/bootstrap-icons.css'
+import Alpine from '../script/script.js?url'
 ---
 
 <!doctype html>
@@ -15,7 +16,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 	<body class="bg-dark text-white">
 		<slot />
 		
-		<script type="module" src="/src/script/script.js"></script>
+		<script type="module" src={ Alpine }></script>
 	</body>
 </html>
 
