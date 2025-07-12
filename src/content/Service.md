@@ -1,0 +1,16 @@
+---
+title: "Services"
+items:
+  - title: "Responsive Web Development"
+    description: "Websites that look great and work perfectly on every screen."
+    icon: "bi bi-laptop display-2"
+  - title: "Component Based-UI"
+    description: "Reusable, modular components built with Atsro.js."
+    icon: "bi bi-gear display-2"
+  - title: "Performance Optimization"
+    description: "Speed matters. I optimize for fast load times and smooth interactivity."
+    icon: "bi bi-lightning-charge display-2"
+  - title: "Semantic & Accesible HTML"
+    description: "Web for everyone. Built with WCAG standards in mind."
+    icon: "bi bi-globe display-2"
+---

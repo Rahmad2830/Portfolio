@@ -1,0 +1,22 @@
+---
+const { cardTitle, description, gambar, alt } = Astro.props
+---
+
+<div class="card bg-dark border-4 text-white border-light mt-4">
+  <div class="card-body text-center">
+    <slot />
+    <img src={gambar} alt={alt} class="card-img-top mb-3" loading="lazy">
+    <h5 class="card-title">{ cardTitle }</h5>
+    <p class="card-text">{ description }</p>
+  </div>
+</div>
+
+<style>
+.card {
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(255,255,255, 0.5);
+}
+</style>

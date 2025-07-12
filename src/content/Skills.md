@@ -1,0 +1,22 @@
+---
+title: "My Skills"
+items:
+  - skills: "Alpine.js"
+    percent: "90%"
+    width: "width: 90%"
+  - skills: "Bootstrap"
+    percent: "87%"
+    width: "width: 87%"
+  - skills: "Javascript"
+    percent: "80%"
+    width: "width: 80%"
+  - skills: "Astro.js"
+    percent: "85%"
+    width: "width: 85%"
+  - skills: "HTML"
+    percent: "90%"
+    width: "width: 90%"
+  - skills: "CSS"
+    percent: "86%"
+    width: "width: 86%"
+---

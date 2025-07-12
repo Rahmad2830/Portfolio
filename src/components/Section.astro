@@ -1,0 +1,15 @@
+---
+const { id } = Astro.props
+---
+
+<section class="pad" id={id}>
+  <div class="container">
+    <slot />
+  </div>
+</section>
+
+<style>
+  .pad {
+    padding-top: 100px;
+  }
+</style>

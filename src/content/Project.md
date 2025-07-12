@@ -1,0 +1,20 @@
+---
+title: "Project"
+items:
+  - title: "Movie Search App"
+    description: "Aplikasi pencari film favorit kamu dan melihat detailnya"
+    gambar: "img/movie.jpg"
+    url: "https://movie-search-app-one-delta.vercel.app"
+  - title: "Coffeshop Landing Page"
+    description: "Landing page coffeshop dengan shopping cart"
+    gambar: "img/coffee.jpg"
+    url: "https://landing5-nine.vercel.app"
+  - title: "Catering Landing Page"
+    description: "Landing Page untuk usaha jasa catering"
+    gambar: "img/catering.jpg"
+    url: "https://landing6-ecru.vercel.app"
+  - title: "Construction Landing Page"
+    description: "Landing Page untuk usaha jasa Konstruksi"
+    gambar: "img/konstruksi.jpg"
+    url: "https://landing-page-mu-sable.vercel.app"
+---

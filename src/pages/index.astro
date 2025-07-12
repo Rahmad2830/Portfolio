@@ -1,0 +1,101 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Navbar from '../components/Navbar.astro'
+import Section from '../components/Section.astro'
+import Button from '../components/Button.astro'
+import Progressbar from '../components/Progressbar.astro'
+import Cards from '../components/Cards.astro'
+const data = Object.values(import.meta.glob('../content/*.md', { eager: true }))
+const services = data.filter(i => i.frontmatter.title === "Services")
+const skills = data.filter(i => i.frontmatter.title === "My Skills")
+const project = data.filter(i => i.frontmatter.title === "Project")
+---
+
+<Layout pageTitle="Homepage">
+	<Navbar />
+	<!-- hero -->
+	<Section id="hero">
+	  <div class="row gap-lg-5 justify-content-center">
+	    <div class="col-md-7 col-lg-6 align-self-center">
+	      <h1 class="h3">Hi, I'm Rahmat,</h1>
+	      <h3 class="display-1 fw-bold"><span class="text-warning">Front</span>end Developer</h3>
+	      <p class="lead mt-3">I'm Frontend Developer based in Indonesia. I'll help you build beautiful website yours users will love</p>
+	      <div class="d-flex gap-4 mt-5">
+	      <Button style="rounded-5 btn btn-warning btn-lg">Hubungi saya</Button>
+	      <Button style="rounded-5 btn btn-outline-light btn-lg">Tentang saya</Button>
+	      </div>
+	    </div>
+	    <div class="col-md-5 mt-5 mt-md-0 align-self-center">
+	      <img src="img/hero.jpeg" loading="lazy" alt="foto rahmat" class="img-fluid rounded-circle img-thumbnail">
+	    </div>
+	  </div>
+	</Section>
+	<!-- about me -->
+	{skills.map((section) => {
+	  const { title, items } = section.frontmatter
+	  return (
+	<Section id="about">
+	  <div class="d-flex flex-column">
+	    <h1 class="display-1 fw-bold text-center">About me<span class="text-warning">.</span></h1>
+	    <p class="lead border-5 border-warning border-start ps-3 mt-3">Developing beautiful and functional websites is what i love doing, and thats why i give my all in every new challenge.</p>
+	    <h1 class="my-3">My Skills</h1>
+	    <div class="row">
+	      {items.map((item) => (
+	      <div class="col-md-6">
+	        <Progressbar skills={item.skills} percent={item.percent} width={item.width} />
+	      </div>
+	      ))}
+	    </div>
+	  </div>
+	</Section>
+	)})}
+	<!-- what i do -->
+	{services.map((section) => {
+	  const { title, items } = section.frontmatter
+	 return (
+	<Section id="services">
+	  <div>
+	    <h1 class="display-1 fw-bold text-center">What i do<span class="text-warning">.</span></h1>
+	    <div class="row mt-5">
+	      {items.map((item) => (
+	      <div class="col-12 col-md-6">
+	        <Cards cardTitle={item.title} description={item.description} gambar="" alt="">
+    	      <i class={item.icon}></i>
+    	    </Cards>
+	     </div>
+    	 ))}
+	    </div>
+	  </div>
+	</Section>
+	)})}
+	<!-- project -->
+	{project.map((section) => {
+	  const { title, items } = section.frontmatter
+	  return (
+	<Section id="project">
+	  <h1 class="display-1 text-center fw-bold">My Project<span class="text-warning">.</span></h1>
+	  <div class="row mt-5">
+	  {items.map((item) => (
+	    <div class="col-12 col-md-6 col-lg-3">
+	      <a href={item.url} class="text-decoration-none">
+	      <Cards cardTitle={item.title} description={item.description} gambar={item.gambar} alt={item.title}>
+	      </Cards>
+	      </a>
+	    </div>
+	    ))}
+	  </div>
+	</Section>
+	)})}
+	<!-- contact me -->
+	<Section id="contact">
+	  <h1 class="display-1 fw-bold text-center">Contact me<span class="text-warning">.</span></h1>
+	  <div class="border-start border-5 border-warning ps-3">
+  	  <p class="lead mt-5">Got a design that needs to come alive? A site that needs a speed boost? Or just want to collaborate? I’d love to hear from you.</p>
+  	  <div class="d-flex flex-column">
+  	  <h6><i class="bi bi-envelope-at display-6 pe-3"></i>rahmatnurhidayat0101@gmail.com</h6>
+  	  <h6><i class="bi bi-whatsapp display-6 pe-3"></i>081311378721</h6>
+  	  <h6><i class="bi bi-github display-6 pe-3"></i>/Rahmad2830</h6>
+  	  </div>
+	  </div>
+	</Section>
+</Layout>
