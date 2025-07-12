@@ -2,7 +2,6 @@
 const { pageTitle } = Astro.props
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
-import Alpine from '../script/script.js?url'
 ---
 
 <!doctype html>
@@ -10,13 +9,12 @@ import Alpine from '../script/script.js?url'
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
+		<script src="//unpkg.com/alpinejs" defer></script>
 		<meta name="generator" content={Astro.generator} />
 		<title>{ pageTitle }</title>
 	</head>
 	<body class="bg-dark text-white">
 		<slot />
-		
-		<script type="module" src={ Alpine }></script>
 	</body>
 </html>
 

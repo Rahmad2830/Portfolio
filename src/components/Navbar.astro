@@ -1,8 +1,8 @@
 <header>
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" x-data="state">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" x-data="{ isOpen: false }">
     <div class="container light rounded-5 p-2">
       <a class="fw-bold navbar-brand ms-3">Rahmat</a>
-      <button class="navbar-toggler" @click='toggle()'><span class="navbar-toggler-icon"></span></button>
+      <button class="navbar-toggler" @click='isOpen = !isOpen'><span class="navbar-toggler-icon"></span></button>
       <div class="navbar-collapse" x-transition.duration.500 x-show="isOpen">
         <div class="navbar-nav ms-auto gap-0 gap-md-2 gap-lg-4 me-3 text-center">
           <a href="#hero" class="nav-link">Home</a>
