@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <title>Homepage</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .cursor {
+        animation: blink 1s infinite;
+      }
+      @keyframes blink {
+        0%, 50%, 100% { opacity: 1; }
+        25%, 75% { opacity: 0; }
+      }
+      .fade-left {
+        opacity: 0;
+        transform: translateX(20px);
+        animation: fadeLeft 1s ease-in forwards;
+      }
+      @keyframes fadeLeft {
+        to {
+          opacity: 1;
+          transform: translateX(0px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div x-data="typing" style="display:flex">
+      <h1 x-text="text"></h1><h1 class="cursor">|</h1>
+    </div>
+    <div style="height:100vh"></div>
+      <div x-data="{ shown: false }" x-intersect:enter="shown = true"
+      x-intersect:leave="shown = false">
+        <div x-show="shown" class="animate__animated animate__fadeInRight">
+          <h1>Hello World</h1>
+        </div>
+      </div>
+    <div style="height:100vh"></div>
+    
+    
+    <script>
+      document.addEventListener("alpine:init", () => {
+        Alpine.data("typing", () => ({
+          fullText: "Developer",
+          text: '',
+          index:0,
+          init() {
+            this.type()
+          },
+          erase() {
+            if(this.index > 0) {
+              this.text = this.text.slice(0, -1)
+              this.index--
+              setTimeout(() => this.erase(), 100)
+            } else {
+              setTimeout(() => this.type(), 2000)
+            }
+          },
+          type() {
+            if(this.index < this.fullText.length) {
+              this.text += this.fullText[this.index]
+              this.index++
+              setTimeout(() => this.type(), 100)
+            } else {
+              setTimeout(() => this.erase(), 2000)
+            }
+          }
+        }))
+      })
+    </script>
+  </body>
+</html>
