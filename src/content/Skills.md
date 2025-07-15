@@ -20,9 +20,9 @@ items:
   - skills: "HTML"
     percent: "90%"
     width: "width: 90%"
-    animasi: "fade-up-right"
+    animasi: "fade-right"
   - skills: "CSS"
     percent: "86%"
     width: "width: 86%"
-    animasi: "fade-up-left"
+    animasi: "fade-left"
 ---

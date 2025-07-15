@@ -17,10 +17,25 @@ const project = data.filter(i => i.frontmatter.title === "Project")
 	<Section id="hero">
 	  <div class="row gap-lg-5 justify-content-center">
 	    <div class="col-md-7 col-lg-6 align-self-center" x-data="typing" x-init="init()">
-	      <h1 data-aos="fade-right" data-aos-duration="2000" class="h3">Hi, I'm Rahmat,</h1>
-	      <h3 data-aos="zoom-in" data-aos-duration="2000" class="display-1 fw-bold"><span class="text-warning">Front</span>end<br><span x-text="text"></span><span class="blink">|</span></h3>
-	      <p data-aos="fade-up" data-aos-duration="2000" class="lead mt-3">I'm Frontend Developer based in Indonesia. I'll help you build beautiful website yours users will love</p>
-	      <div data-aos="zoom-in" data-aos-duration="2000" class="d-flex gap-4 mt-5">
+	      <h1 x-data="{ shown: false }"
+	      x-intersect:enter="shown = true"
+	      x-intersect:leave="shown = false"
+	      :class="{'fade-left': shown}">Hi, I'm Rahmat,</h1>
+	      <h3 x-data="{ shown: false }"
+	      x-intersect:enter="shown = true"
+	      x-intersect:leave="shown = false"
+	      :class="{'fade-right': shown}"
+	      class="display-1 fw-bold"><span class="text-warning">Front</span>end<br><span x-text="text"></span><span class="blink">|</span></h3>
+	      <p x-data="{ shown: false }"
+	      x-intersect:enter="shown = true"
+	      x-intersect:leave="shown = false"
+	      :class="{'fade-up': shown}"
+	      class="lead mt-3">I'm Frontend Developer based in Indonesia. I'll help you build beautiful website yours users will love</p>
+	      <div x-data="{ shown: false }"
+	      x-intersect:enter="shown = true"
+	      x-intersect:leave="shown = false"
+	      :class="{'zoom-in': shown}"
+	      class="d-flex gap-4 mt-5">
 	      <a class="btn btn-warning btn-lg rounded-5" href="#contact" style="rounded-5 btn btn-warning btn-lg">Contact me</a>
 	      <a class="btn btn-outline-light btn-lg rounded-5" href="#about" style="rounded-5 btn btn-outline-light btn-lg">About me</a>
 	      </div>
@@ -36,12 +51,23 @@ const project = data.filter(i => i.frontmatter.title === "Project")
 	  return (
 	<Section id="about">
 	  <div class="d-flex flex-column">
-	    <h1 class="display-1 fw-bold text-center" data-aos="fade-up" data-aos-duration="1500">About me<span class="text-warning">.</span></h1>
-	    <p class="lead border-5 border-warning border-start ps-3 mt-3" data-aos="fade-left" data-aos-duration="1500">Developing beautiful and functional websites is what i love doing, and thats why i give my all in every new challenge.</p>
+	    <h1 x-data="{ shown: false }"
+	      x-intersect:enter="shown = true"
+	      x-intersect:leave="shown = false"
+	      :class="{'fade-down': shown}"
+	      class="display-1 fw-bold text-center">About me<span class="text-warning">.</span></h1>
+	    <p x-data="{ shown: false }"
+	      x-intersect:enter="shown = true"
+	      x-intersect:leave="shown = false"
+	      :class="{'fade-left': shown}"
+	      class="lead border-5 border-warning border-start ps-3 mt-3">Developing beautiful and functional websites is what i love doing, and thats why i give my all in every new challenge.</p>
 	    <h1 class="my-3">My Skills</h1>
 	    <div class="row">
 	      {items.map((item) => (
-	      <div class="col-md-6" data-aos={item.animasi} data-aos-duration="1500">
+	      <div x-data="{ shown: false }"
+	      x-intersect:enter="shown = true"
+	      x-intersect:leave="shown = false"
+	      :class="{'fade-left': shown}" class="col-md-6">
 	        <Progressbar skills={item.skills} percent={item.percent} width={item.width} />
 	      </div>
 	      ))}
@@ -55,10 +81,16 @@ const project = data.filter(i => i.frontmatter.title === "Project")
 	 return (
 	<Section id="services">
 	  <div>
-	    <h1 class="display-1 fw-bold text-center" data-aos="fade-up" data-aos-duration="2000">What i do<span class="text-warning">.</span></h1>
+	    <h1 x-data="{ shown: false }"
+	      x-intersect:enter="shown = true"
+	      x-intersect:leave="shown = false"
+	      :class="{'fade-up': shown}" class="display-1 fw-bold text-center">What i do<span class="text-warning">.</span></h1>
 	    <div class="row mt-5">
 	      {items.map((item) => (
-	      <div class="col-12 col-md-6" data-aos={item.animasi} data-aos-duration="1500">
+	      <div x-data="{ shown: false }"
+	      x-intersect:enter="shown = true"
+	      x-intersect:leave="shown = false"
+	      :class="{'fade-left': shown}" class="col-12 col-md-6">
 	        <Cards style="card text-white rounded-4 mt-4" cardTitle={item.title} description={item.description} gambar="" alt="">
     	      <i class={item.icon}></i>
     	    </Cards>
@@ -73,10 +105,16 @@ const project = data.filter(i => i.frontmatter.title === "Project")
 	  const { title, items } = section.frontmatter
 	  return (
 	<Section id="project">
-	  <h1 class="display-1 text-center fw-bold" data-aos="fade-down" data-aos-duration="2000">My Project<span class="text-warning">.</span></h1>
+	  <h1 x-data="{ shown: false }"
+	      x-intersect:enter="shown = true"
+	      x-intersect:leave="shown = false"
+	      :class="{'fade-down': shown}" class="display-1 text-center fw-bold">My Project<span class="text-warning">.</span></h1>
 	  <div class="row mt-5">
 	  {items.map((item) => (
-	    <div class="col-12 col-md-6 col-lg-3" data-aos={item.animasi} data-aos-duration="1500">
+	    <div x-data="{ shown: false }"
+	      x-intersect:enter="shown = true"
+	      x-intersect:leave="shown = false"
+	      :class="{'fade-right': shown}" class="col-12 col-md-6 col-lg-3">
 	      <Cards style="card border-white mt-4 text-white" cardTitle={item.title} description={item.description} gambar={item.gambar} alt={item.title}>
 	       <a href={item.url} class="btn btn-outline-light mb-3 rounded-5">Demo</a>
 	      </Cards>
@@ -87,8 +125,14 @@ const project = data.filter(i => i.frontmatter.title === "Project")
 	)})}
 	<!-- contact me -->
 	<Section id="contact">
-	  <h1 class="display-1 fw-bold text-center" data-aos="fade-up" data-aos-duration="2000">Contact me<span class="text-warning">.</span></h1>
-	  <div class="border-start border-5 border-warning ps-3" data-aos="fade-left" data-aos-duration="2000">
+	  <h1 x-data="{ shown: false }"
+	      x-intersect:enter="shown = true"
+	      x-intersect:leave="shown = false"
+	      :class="{'fade-down': shown}" class="display-1 fw-bold text-center">Contact me<span class="text-warning">.</span></h1>
+	  <div x-data="{ shown: false }"
+	      x-intersect:enter="shown = true"
+	      x-intersect:leave="shown = false"
+	      :class="{'fade-left': shown}" class="border-start border-5 border-warning ps-3">
   	  <p class="lead mt-5">Got a design that needs to come alive? A site that needs a speed boost? Or just want to collaborate? I’d love to hear from you.</p>
   	  <div class="d-flex flex-column">
   	  <h6><i class="bi bi-envelope-at display-6 pe-3"></i>rahmatnurhidayat0101@gmail.com</h6>
@@ -98,13 +142,3 @@ const project = data.filter(i => i.frontmatter.title === "Project")
 	  </div>
 	</Section>
 </Layout>
-
-<style>
-  .blink {
-    animation: blink 1s infinite;
-  }
-  @keyframes blink {
-    0%, 50%, 100% { opacity: 1; }
-    25%, 75% { opacity: 0; }
-  }
-</style>
