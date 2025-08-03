@@ -12,7 +12,7 @@ items:
     url: "https://landing5-nine.vercel.app"
     animasi: "fade-down"
   - title: "Digital Agency Landing Page"
-    description: "Landing Page untuk ditgital marketing agency"
+    description: "Landing Page untuk ditgital marketing agency multibahasa"
     gambar: "img/agency.jpg"
     url: "https://landing6-ecru.vercel.app"
     animasi: "zoom-in"
