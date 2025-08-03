@@ -16,9 +16,9 @@ items:
     gambar: "img/agency.jpg"
     url: "https://landing6-ecru.vercel.app"
     animasi: "zoom-in"
-  - title: "Construction Landing Page"
-    description: "Landing Page untuk usaha jasa Konstruksi"
-    gambar: "img/konstruksi.jpg"
-    url: "https://landing-page-mu-sable.vercel.app"
+  - title: "Pet Boarding Landing Page"
+    description: "Landing Page untuk tempat penitipan hewan + blog + CMS"
+    gambar: "img/petshop.webp"
+    url: "https://blog-ecru.netlify.app"
     animasi: "fade-up"
 ---
