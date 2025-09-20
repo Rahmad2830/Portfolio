@@ -48,23 +48,23 @@
           </button>
           
           <div class="hidden md:flex gap-10">
-            <a href="" class="hover:underline">Home</a>
-            <a href="" class="hover:underline">About</a>
-            <a href="" class="hover:underline">Project</a>
-            <a href="" class="hover:underline">Contact</a>
+            <a href="#home" class="hover:underline">Home</a>
+            <a href="#about" class="hover:underline">About</a>
+            <a href="#project" class="hover:underline">Project</a>
+            <a href="#contact" class="hover:underline">Contact</a>
           </div>
         </div>
         
         <div x-show="isOpen" x-transition.duration.500 class="bg-neutral-900 md:hidden flex flex-col gap-4 text-white mt-4">
-          <a href="" class="hover:underline">Home</a>
-          <a href="" class="hover:underline">About</a>
-          <a href="" class="hover:underline">Project</a>
-          <a href="" class="hover:underline">Contact</a>
+          <a href="#home" class="hover:underline">Home</a>
+          <a href="#about" class="hover:underline">About</a>
+          <a href="#project" class="hover:underline">Project</a>
+          <a href="#contact" class="hover:underline">Contact</a>
         </div>
       </nav>
     </header>
     <main>
-      <section class="w-full p-4 pt-20 lg:pt-0">
+      <section id="home" class="w-full p-4 pt-20 lg:pt-0">
         <div class="container sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-xl m-auto md:h-[768px] w-full flex items-center justify-center">
           <div class="grid grid-cols-12 gap-5 text-white flex items-center">
             <div x-data="typing" class="col-span-12 lg:col-span-6 flex flex-col gap-4 text-center lg:text-start">
@@ -98,7 +98,7 @@
         </div>
       </section>
       <!-- about -->
-      <section class="w-full p-4 text-white mt-10">
+      <section id="about" class="w-full p-4 text-white mt-10">
         <div class="container sm:max-w-screen-sm md:max-w-screen-sm lg:max-w-screen-xl m-auto">
           <div class="grid grid-cols-12 gap-5 mt-10 flex items-center">
             <div class="col-span-12 lg:col-span-6">
@@ -109,15 +109,15 @@
               <p class="mt-5 text-center lg:text-start">Hi, I’m Rahmat, a passionate Frontend Developer with a strong focus on creating fast, responsive, and user-friendly web experiences. I enjoy turning ideas into clean and functional code, combining both aesthetics and performance.</p>
               <p class="mt-3 text-center lg:text-start">I specialize in modern frontend tools and frameworks such as JavaScript, HTML, CSS, Alpine.js, and Hugo. Whether it’s building dynamic interfaces, optimizing websites for speed, or crafting seamless user interactions, I always strive for code that is both efficient and maintainable.</p>
               <p class="mt-10 flex justify-center gap-5">
-                <a href="" class="px-5 py-3 rounded-[30px] bg-gradient-to-bl from-violet-500 to-pink-500 shadow-xl">Contact me</a>
-                <a href="" class="px-5 py-3 rounded-[30px] bg-white text-black shadow-xl">Dive to my project</a>
+                <a href="#contact" class="px-5 py-3 rounded-[30px] bg-gradient-to-bl from-violet-500 to-pink-500 shadow-xl">Contact me</a>
+                <a href="#project" class="px-5 py-3 rounded-[30px] bg-white text-black shadow-xl">Dive to my project</a>
               </p>
             </div>
           </div>
         </div>
       </section>
       <!-- project -->
-      <section x-data="project" class="w-full p-4 mt-10">
+      <section x-data="project" id="project" class="w-full p-4 mt-10">
         <div class="container sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-xl m-auto text-white">
           <h1 class="text-3xl md:text-5xl text-center font-semibold"><span class="bg-gradient-to-bl from-violet-500 to-pink-500 bg-clip-text text-transparent">My</span> Project.</h1>
           <p class="pt-5 text-center lg:w-[60%] lg:m-auto">A collection of my works, ideas, and experiments in code & design showcasing how I transform concepts into functional and visually engaging digital experiences.</p>
@@ -147,7 +147,7 @@
         </div>
       </section>
       <!-- contact -->
-      <section class="w-full mt-10 p-4">
+      <section id="contact" class="w-full mt-10 p-4">
         <div class="container sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-xl m-auto text-white">
           <h1 class="text-3xl md:text-5xl font-semibold text-center">Contact <span class="bg-gradient-to-r from-violet-500 to-pink-500 bg-clip-text text-transparent">me.</span></h1>
           <p class="mt-5 text-center">Let’s collaborate and turn ideas into stunning web experiences.</p>
