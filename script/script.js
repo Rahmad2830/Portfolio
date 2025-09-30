@@ -69,8 +69,8 @@ document.addEventListener("alpine:init", () => {
       },
       {
         id: 6,
-        name: "Flask",
-        image: "img/Flask.svg"
+        name: "Django",
+        image: "img/Django.svg"
       },
       {
         id: 7,
@@ -129,6 +129,27 @@ document.addEventListener("alpine:init", () => {
         image: "img/tokoDonat.webp",
         description: "Landing page for a donut shop checkout via Whatsapp",
         link: "https://donut-ecru.netlify.app"
+      },
+      {
+        id: 3,
+        title: "Money management dashboard",
+        stack: [
+          {
+            fm: "Django",
+            fmImage: "img/Django.svg"
+          },
+          {
+            fm: "Alpine.js",
+            fmImage: "img/Alpine.js.svg"
+          },
+          {
+            fm: "Bootstrap",
+            fmImage: "img/Bootstrap.svg"
+          },
+        ],
+        image: "img/dashboard.webp",
+        description: "Dashboard for money management. use username:admin, password:Rahmat123 for login and try all features",
+        link: "https://rahmatnh.pythonanywhere.com/"
       },
     ]
   }))

@@ -218,11 +218,11 @@
             <template x-for="item in list" :key="item.id">
             <div x-data="{ shown: false }"
             x-intersect="shown = true"
-            :class="{ 'fade-left': shown }" class="col-span-12 md:col-span-6 lg:col-span-3 bg-neutral-800 rounded-xl border border-slate-600 transition duration-500 hover:scale-105">
+            :class="{ 'fade-left': shown }" class="col-span-12 md:col-span-6 lg:col-span-4 bg-neutral-800 rounded-xl border border-slate-600 transition duration-500 hover:scale-105">
               <img :src="item.image" :alt="item.title" loading="lazy" class="w-full h-auto rounded-t-xl" />
               <div class="p-4 text-center">
                 <h2 class="text-xl font-semibold" x-text="item.title"></h2>
-                <div class="flex gap-2 mt-3">
+                <div class="flex flex-wrap gap-2 mt-3">
                   <template x-for="i in item.stack">
                   <p class="flex flex-wrap items-center gap-2 bg-white/20 backdrop-blur-lg border border-white/30 rounded-xl p-2">
                     <img :src="i.fmImage" :alt="i.fm" loading="lazy" width="20" />
